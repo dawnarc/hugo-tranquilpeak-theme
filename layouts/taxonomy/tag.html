@@ -6,6 +6,9 @@
       {{ if or (not (isset .Site.Params "tagPagination")) (.Site.Params.tagPagination) }}
         {{ partial "post/header-cover.html" . }}
       {{ end }}
+	  <amp-auto-ads type="adsense"
+			data-ad-client="ca-pub-4843403245883139">
+		</amp-auto-ads>
       <div id="main" data-behavior="{{ .Scratch.Get "sidebarBehavior" }}"
         class="{{ with .Params.coverimage }}hasCover{{ end }}
                {{ if eq .Params.covermeta "out" }}hasCoverMetaOut{{ else }}hasCoverMetaIn{{ end }}
