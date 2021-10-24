@@ -33,6 +33,9 @@
 {{ partial "head.html" . }}
   <body>
     <div id="blog">
+      <amp-auto-ads type="adsense"
+            data-ad-client="ca-pub-4843403245883139">
+      </amp-auto-ads>
       {{ partial "header.html" . }}
       {{ partial "sidebar.html" . }}
       {{ partial "post/header-cover.html" . }}
@@ -42,9 +45,6 @@
                {{ with .Params.coverCaption }}hasCoverCaption{{ end }}">
 
         <div id="categories-archives" class="main-content-wrap">
-			<amp-auto-ads type="adsense"
-					data-ad-client="ca-pub-4843403245883139">
-			</amp-auto-ads>
           <form id="filter-form" action="##">
             <input name="category" type="text" class="form-control input--xlarge"
                    placeholder="{{ i18n "global.search_category" }}" autofocus="autofocus">

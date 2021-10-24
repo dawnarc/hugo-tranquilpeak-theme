@@ -1,11 +1,11 @@
 {{ partial "head.html" . }}
   <body>
+    <amp-auto-ads type="adsense"
+        data-ad-client="ca-pub-4843403245883139">
+    </amp-auto-ads>
     <div id="blog">
       {{ partial "header.html" . }}
       {{ partial "sidebar.html" . }}
-		<amp-auto-ads type="adsense"
-			data-ad-client="ca-pub-4843403245883139">
-		</amp-auto-ads>
       <div id="main" data-behavior="{{ .Scratch.Get "sidebarBehavior" }}"
         class="{{ with .Params.coverImage }}hasCover{{ end }}
                {{ if eq .Params.coverMeta "out" }}hasCoverMetaOut{{ else }}hasCoverMetaIn{{ end }}
