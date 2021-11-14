@@ -20,7 +20,6 @@
 					data-ad-client="ca-pub-4843403245883139">
 			</amp-auto-ads>
             <div class="main-content-wrap">
-                <!-- ad001 -->
                 <ins class="adsbygoogle"
                      style="display:block;height:120px"
                      data-ad-client="ca-pub-4843403245883139"
@@ -30,7 +29,6 @@
                 <script>
                      (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
-
               {{ (replaceRE "<!--\\s*[t|T][o|O][c|C]\\s*-->" (printf "<h1 id=\"table-of-contents\">%s</h1>%s" (i18n "post.toc") .TableOfContents) .Content) | safeHTML }}
               {{ partial "post/gallery.html" . }}
             </div>
