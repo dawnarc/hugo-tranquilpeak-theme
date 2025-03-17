@@ -1,5 +1,5 @@
 # Tranquilpeak
-# Version : 0.4.7-BETA
+# Version : 0.2.0-ALPHA
 # Author : Thibaud Leprêtre
 
 # I STRONGLY recommend you to use a CDN to speed up loading of pages.
@@ -12,15 +12,39 @@
 # For developpers, if you modify this theme, put your images in `source/images` folder and
 # use grunt task `build` to synchronize assets
 
-baseURL = "https://example.org/"
-languageCode = "en-us"
-defaultContentLanguage = "en-us"
-title = "Hugo tranquilpeak theme"
+baseurl = "https://dawnarc.com/"
+title = "玄冬Wong"
 theme = "hugo-tranquilpeak-theme"
-disqusShortname = "hugo-tranquilpeak-theme"
-# googleAnalytics = "UA-123-45"
-paginate = 7
 canonifyurls = true
+
+# Enable emoji support
+enableEmoji = true
+
+# Enable Git info for lastmod
+enableGitInfo = true
+
+DefaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+
+# hide Post menu
+sectionPagesMenu = ""
+
+[params.author]
+  name = "Wang Aiguo"
+  bio = "山河固，九边殊，万里川原，龙旗指处。"
+  job = "Developer"
+  location = "Yichang, Hubei"
+  avatar = "/avatar.jpg"
+
+[languages]
+  [languages.en]
+    title = "玄冬Wong"
+    languageName = "English"
+    weight = 1
+    [languages.en.pagination]
+      disableAliases = true
+      pagerSize = 15
+      path = 'page'
 
 [permalinks]
   post = "/:year/:month/:slug/"
@@ -30,93 +54,122 @@ canonifyurls = true
   category = "categories"
   archive = "archives"
 
-[author]
-  name = "Firstname Lastname"
-  bio = "Super bio with markdown support **COOL**"
-  job = "Your job title"
-  location = "France"
-  # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
-  gravatarEmail = "thibaud.lepretre@gmail.com"
-  # Your profile picture
-  # Overwritten by your gravatar image if `author.gravatarEmail` is filled
-  picture = "https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-simple-512.png"
-  # Your Twitter username without the @. E.g : thibaudlepretre
-  # twitter = "thibaudlepretre"
-  # Your google plus profile id. E.g : +ThibaudLepretre or 114625208755123718311
-  # googlePlus = "+ThibaudLepretre"
-
-# Menu Configuration
-[[menu.main]]
-  weight = 1
-  identifier = "home"
-  name = "Home"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-home\"></i>"
-  url = "/"
-[[menu.main]]
-  weight = 2
-  identifier = "categories"
-  name = "Categories"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-bookmark\"></i>"
-  url = "/categories"
-[[menu.main]]
-  weight = 3
-  identifier = "tags"
-  name = "Tags"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-tags\"></i>"
-  url = "/tags"
-[[menu.main]]
-  weight = 4
-  identifier = "archives"
-  name = "Archives"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-archive\"></i>"
-  url = "/archives"
-[[menu.main]]
-  weight = 5
-  identifier = "about"
-  name = "About"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-question\"></i>"
-  url = "/#about"
+# Navigation Menu
+[menu]
+  [[menu.main]]
+    weight = 1
+    name = "Home"
+    identifier = "home"
+    url = "/"
+    pre = "<i class=\"sidebar-button-icon fa fa-lg fa-home\"></i>"
+  [[menu.main]]
+    weight = 2
+    name = "Categories"
+    identifier = "categories"
+    url = "/categories"
+    pre = "<i class=\"sidebar-button-icon fa fa-lg fa-bookmark\"></i>"
+  [[menu.main]]
+    weight = 3
+    name = "Archives"
+    identifier = "archives"
+    url = "/archives"
+    pre = "<i class=\"sidebar-button-icon fa fa-lg fa-archive\"></i>"
+  [[menu.main]]
+    weight = 4
+    name = "Tags"
+    identifier = "tags"
+    url = "/tags"
+    pre = "<i class=\"sidebar-button-icon fa fa-lg fa-tags\"></i>"
+  [[menu.main]]
+    weight = 5
+    name = "About"
+    identifier = "about"
+    url = "/#about"
+    pre = "<i class=\"sidebar-button-icon fa fa-lg fa-question\"></i>"
+  [[menu.main]]
+    weight = 6
+    name = "RSS"
+    identifier = "rss"
+    url = "/index.xml"
+    pre = "<i class=\"sidebar-button-icon fa fa-lg fa-rss\"></i>"
 
 [[menu.links]]
-  weight = 1
+  weight = 0
   identifier = "github"
   name = "GitHub"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-github\"></i>"
-  url = "https://github.com/kakawait"
+  url = "https://github.com/dawnarc"
 [[menu.links]]
-  weight = 2
+  weight = 1
   identifier = "stackoverflow"
   name = "Stack Overflow"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-stack-overflow\"></i>"
-  url = "https://stackoverflow.com/users/636472/kakawait"
+  url = "https://stackoverflow.com/users/1645289/protoss"
+[[menu.links]]
+  weight = 0
+  identifier = "twitter"
+  name = "Twitter"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-twitter\"></i>"
+  url = "https://twitter.com/dawn_arc"
+[[menu.links]]
+  weight = 0
+  identifier = "facebook"
+  name = "Facebook"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-facebook\"></i>"
+  url = "https://www.facebook.com/koanland"
+[[menu.links]]
+  weight = 0
+  identifier = "weibo"
+  name = "Weibo"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-weibo\"></i>"
+  url = "https://weibo.com/koanland"
+[[menu.links]]
+  weight = 0
+  identifier = "linkedin"
+  name = "Linkedin"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-linkedin\"></i>"
+  url = "https://www.linkedin.com/in/dawnarc/"
+[[menu.links]]
+  weight = 0
+  identifier = "pinterest"
+  name = "Pinterest"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-pinterest\"></i>"
+  url = "https://www.pinterest.com/wangaiguo/"
+[[menu.links]]
+  weight = 0
+  identifier = "steam"
+  name = "Steam"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-steam\"></i>"
+  url = "https://steamcommunity.com/id/dawnarc"
+[[menu.links]]
+  weight = 0
+  identifier = "instagram"
+  name = "Instagram"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-instagram\"></i>"
+  url = "https://www.instagram.com/dawn_arc/"
 
-[[menu.misc]]
-  weight = 1
-  identifier = "rss"
-  name = "RSS"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-rss\"></i>"
-  url = "/index.xml"
 
 [params]
+  syntaxHighlighter = "highlight.js"
+
+  customCSS = ["cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/paraiso-light.min.css"]
+ 
   # Customize date format use to render blog post date, categories and other
   # You must use date format used by Go Time package https://golang.org/pkg/time/
   # Months (not work with short month like "jan", "feb", etc) are translated if translation exists on i18n folders
-  # Default format is: January 2, 2006
+  # Default format is: January 2, 2006 
   # dateFormat = "2 January 2006"
-
+  dateFormat = "Monday, 15:04, Jan 2, 2006"
+	
   # Global keywords configuration. Following keywords will be add to every pages
   # keywords = ["development", "next-gen"]
-
-  # Syntax highlighter, possible choice between: "highlight.js" (recommanded) and "prism.js" (experimental)
-  # You can comment it to disable syntax highlighting
-  syntaxHighlighter = "highlight.js"
 
   # Hide sidebar on all article page to let article take full width to improve reading, and enjoy wide images and cover images. (true: enable, false: disable)
   clearReading = true
 
-  # Define categories will create hierarchy between parents: `categories = ["foo", "bar"]` will consider "bar" a sub-category of "foo".
+  # Define categories will create hierarchy between parents: `categories = ["foo", "bar"]` will consider "bar" a sub-category of "foo". 
   # If false it will flat categories.
-  hierarchicalCategories = true
+  hierarchicalCategories = false
 
   description = "Hugo tranquilpeak theme demo"
 
@@ -139,9 +192,9 @@ canonifyurls = true
   # There is many free CDN like Cloudinary or you can also use indirectly
   # by using services like Google Photos.
   # Current image is on AWS S3 and delivered by AWS CloudFront.
-  # Otherwise put your image, for example `cover.jpg` in folder `static/images/`,
-  # and use relative url : `images/cover.jpg`
-  coverImage = "images/cover.jpg"
+  # Otherwise put your image in folder `static/_images/` (development)  or in `source/assets/images/` if you can't or don't want to build the theme,
+  # and use relative url : `your-image.png`
+  coverImage = "cover-v1.2.0.jpg"
 
   # Display an image gallery at the end of a post which have photos variables (false: disabled, true: enabled)
   imageGallery = true
@@ -157,9 +210,6 @@ canonifyurls = true
   # and set `autoThumbnailImage` to `false` on a post to overwrite this setting
   autoThumbnailImage = true
 
-  # Your favicon path, default is "/favicon.png"
-  # favicon = "/favicon.png"
-
   # Header configuration
   # The link at the right of the header is customizable
   # You can add a link (as an icon) at the right of the header instead of the author's gravatar image or author's picture.
@@ -167,49 +217,7 @@ canonifyurls = true
   #     url: /#search
   #     icon: search
   #     class: st-search-show-outputs
-
-  # Display `Next` on left side of the pagination, and `Prev` on right side one.
-  # If you set this value to `true`, these positions swap.
-  # swapPaginator = true
-
-  # Custom CSS. Put here your custom CSS files. They are loaded after the theme CSS;
-  # they have to be referred from static root. Example
-  # [[params.customCSS]]
-  #   href = "css/mystyle.css"
-
-  # Custom JS. Put here your custom JS files. They are loaded after the theme JS;
-  # they have to be referred from static root. Example
-  # [[params.customJS]]
-  #   src = "js/myscript.js"
-
-  # Sharing options
-  # Comment and uncomment to enable or disable sharing options
-  # If you wanna add a sharing option, read user documentation :
-  # Tranquilpeak configuration > Theme configuration > sharing-options
-  [[params.sharingOptions]]
-    name = "Facebook"
-    icon = "fa-facebook-official"
-    url = "https://www.facebook.com/sharer/sharer.php?u=%s"
-
-  [[params.sharingOptions]]
-    name = "Twitter"
-    icon = "fa-twitter"
-    url = "https://twitter.com/intent/tweet?text=%s"
-
-  [[params.sharingOptions]]
-    name = "Google+"
-    icon = "fa-google-plus"
-    url = "https://plus.google.com/share?url=%s"
-
   [params.header.rightLink]
     class = ""
     icon = ""
     url = "/#about"
-
-  # Customize link of author avatar in sidebar
-  # [params.sidebar.profile]
-  #   url = "/#about"
-
-  # Customize copyright value "© 2017 <CUSTOMIZATION>. All Rights Reserved"
-  # [params.footer]
-  #   copyright = "<a href=\"https://github.com/kakawait\">kakawait</a>"
