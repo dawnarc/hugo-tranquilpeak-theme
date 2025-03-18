@@ -2,7 +2,9 @@
   <div class="sidebar-container">
     <div class="sidebar-profile">
         <a href="{{ if $.Site.Params.sidebar.profile.url }}{{ $.Site.Params.sidebar.profile.url }}{{ else }}{{ "/#about" }}{{ end }}">
-          <img class="sidebar-profile-picture" src="/avatar.jpg" alt="{{ i18n "global.author_picture" }}" />
+          {{ with .Site.Params.Author.Avatar }}
+            <img class="sidebar-profile-picture" src={{ . | markdownify }} alt="{{ i18n "global.author_picture" }}" />
+          {{ end }}
         </a>
         <h4 class="sidebar-profile-name">{{ $.Site.Params.Author.name }}</h4>
         <h5 class="sidebar-profile-bio">{{ $.Site.Params.Author.bio }}</h5>

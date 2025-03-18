@@ -13,16 +13,16 @@
         class="{{ with .Params.coverimage }}hasCover{{ end }}
                {{ if eq .Params.covermeta "out" }}hasCoverMetaOut{{ else }}hasCoverMetaIn{{ end }}
                {{ with .Params.coverCaption }}hasCoverCaption{{ end }}">
-        {{ if or (not (isset .Site.Params "categoryPagination")) (.Site.Params.categoryPagination) }}
-          <section class="postShorten-group main-content-wrap">
-            {{ $paginator := .Paginate .Pages }}
-            {{ range $paginator.Pages }}
-              {{ .Render "summary" }}
-            {{ end }}
-            {{ partial "pagination.html" . }}
-          </section>
-        {{ else }}
-          <div id="archives" class="main-content-wrap">
+      {{ if or (not (isset .Site.Params "categoryPagination")) (.Site.Params.categoryPagination) }}
+        <section class="postShorten-group main-content-wrap">
+          {{ $paginator := .Paginate .Pages }}
+          {{ range $paginator.Pages }}
+            {{ .Render "summary" }}
+          {{ end }}
+          {{ partial "pagination.html" . }}
+        </section>
+      {{ else }}
+        <div id="archives" class="main-content-wrap">
 		  
 			<!-- ad001 -->
 			<ins class="adsbygoogle"
