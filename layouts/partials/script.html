@@ -13,7 +13,7 @@
 <script src="/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
 <!--SCRIPTS END-->
 {{ range .Site.Params.customJS }}
-  {{ if isset . "src" }}
+  {{ if eq . "src" }}
     <script{{ range $key, $value := . }} {{ if eq $key "src" }}{{ (printf "%s=\"%s\"" $key ($value | absURL)) | safeHTMLAttr }}{{ else if and (in "async defer" $key) }}{{ if $value }}{{ (printf "%s" $key) | safeHTMLAttr }}{{ end }}{{ else }}{{ (printf "%s=\"%s\"" $key (string $value)) | safeHTMLAttr }}{{ end }}{{ end }}></script>
   {{ else }}
     <script src="{{ . | absURL }}"></script>
